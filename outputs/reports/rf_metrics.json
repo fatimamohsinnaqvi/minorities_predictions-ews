@@ -1,0 +1,235 @@
+{
+  "model": "RandomForestClassifier",
+  "trained_at": "2026-06-23T10:19:05.450319",
+  "features_count": 129,
+  "hyperparameters": {
+    "n_estimators": 300,
+    "max_depth": null,
+    "min_samples_leaf": 2,
+    "class_weight": "balanced"
+  },
+  "train": {
+    "n": 3576,
+    "n_positive": 283,
+    "n_negative": 3293,
+    "positive_rate": 0.0791,
+    "roc_auc": 0.9961,
+    "pr_auc": 0.9223,
+    "threshold": 0.5,
+    "precision": 0.8927,
+    "recall": 1.0,
+    "f1": 0.9433,
+    "tn": 3259,
+    "fp": 34,
+    "fn": 0,
+    "tp": 283,
+    "precision_at_10": 1.0,
+    "recall_at_10": 0.0353,
+    "hits_at_10": 10,
+    "precision_at_20": 1.0,
+    "recall_at_20": 0.0707,
+    "hits_at_20": 20,
+    "precision_at_50": 0.92,
+    "recall_at_50": 0.1625,
+    "hits_at_50": 46
+  },
+  "test": {
+    "n": 534,
+    "n_positive": 29,
+    "n_negative": 505,
+    "positive_rate": 0.0543,
+    "roc_auc": 0.8141,
+    "pr_auc": 0.2138,
+    "threshold": 0.5,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "tn": 505,
+    "fp": 0,
+    "fn": 29,
+    "tp": 0,
+    "precision_at_10": 0.3,
+    "recall_at_10": 0.1034,
+    "hits_at_10": 3,
+    "precision_at_20": 0.35,
+    "recall_at_20": 0.2414,
+    "hits_at_20": 7,
+    "precision_at_50": 0.24,
+    "recall_at_50": 0.4138,
+    "hits_at_50": 12
+  },
+  "community_breakdown": [
+    {
+      "minority_community": "ahmadi",
+      "n": 10,
+      "n_pos": 8,
+      "n_neg": 2,
+      "roc_auc": 1.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "precision_at_20": 0.8,
+      "recall_at_20": 1.0
+    },
+    {
+      "minority_community": "christian",
+      "n": 213,
+      "n_pos": 19,
+      "n_neg": 194,
+      "roc_auc": 0.9023,
+      "precision": 0.0,
+      "recall": 0.0,
+      "precision_at_20": 0.75,
+      "recall_at_20": 0.7895
+    },
+    {
+      "minority_community": "hindu",
+      "n": 11,
+      "n_pos": 2,
+      "n_neg": 9,
+      "roc_auc": 1.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "precision_at_20": 0.1818,
+      "recall_at_20": 1.0
+    },
+    {
+      "minority_community": "multiple",
+      "n": 3,
+      "n_pos": 0,
+      "n_neg": 3,
+      "roc_auc": NaN,
+      "precision": 0.0,
+      "recall": 0.0,
+      "precision_at_20": 0.0,
+      "recall_at_20": 0.0
+    },
+    {
+      "minority_community": "sikh",
+      "n": 5,
+      "n_pos": 0,
+      "n_neg": 5,
+      "roc_auc": NaN,
+      "precision": 0.0,
+      "recall": 0.0,
+      "precision_at_20": 0.0,
+      "recall_at_20": 0.0
+    },
+    {
+      "minority_community": "unspecified",
+      "n": 292,
+      "n_pos": 0,
+      "n_neg": 292,
+      "roc_auc": NaN,
+      "precision": 0.0,
+      "recall": 0.0,
+      "precision_at_20": 0.0,
+      "recall_at_20": 0.0
+    }
+  ],
+  "lahore_breakdown": [
+    {
+      "is_lahore": false,
+      "n": 415,
+      "n_pos": 18,
+      "n_neg": 397,
+      "roc_auc": 0.8066,
+      "precision": 0.0,
+      "recall": 0.0,
+      "precision_at_20": 0.2,
+      "recall_at_20": 0.2222
+    },
+    {
+      "is_lahore": true,
+      "n": 119,
+      "n_pos": 11,
+      "n_neg": 108,
+      "roc_auc": 0.8182,
+      "precision": 0.0,
+      "recall": 0.0,
+      "precision_at_20": 0.3,
+      "recall_at_20": 0.5455
+    }
+  ],
+  "top_features": [
+    {
+      "feature": "level3_case_nature=Any Other Religious Issue",
+      "importance": 0.13677835645535355
+    },
+    {
+      "feature": "median_response_time_min_ps_90d",
+      "importance": 0.03869733790153639
+    },
+    {
+      "feature": "avg_response_time_min_ps_90d",
+      "importance": 0.03579223576700204
+    },
+    {
+      "feature": "n_cases_ps_90d",
+      "importance": 0.03561901296995711
+    },
+    {
+      "feature": "prior_60d_district_count",
+      "importance": 0.03360418751237901
+    },
+    {
+      "feature": "prior_90d_district_count",
+      "importance": 0.033578833537531355
+    },
+    {
+      "feature": "days_to_next_sikh_event",
+      "importance": 0.03315380227630663
+    },
+    {
+      "feature": "positive_feedback_rate_ps_90d",
+      "importance": 0.03270845842310583
+    },
+    {
+      "feature": "days_to_next_christian_event",
+      "importance": 0.032301539074745735
+    },
+    {
+      "feature": "prior_30d_district_count",
+      "importance": 0.03147916556249552
+    },
+    {
+      "feature": "days_to_next_hindu_event",
+      "importance": 0.030183382423664685
+    },
+    {
+      "feature": "days_to_next_political_event",
+      "importance": 0.029858146453116192
+    },
+    {
+      "feature": "days_to_next_major_political_event",
+      "importance": 0.029704943581394968
+    },
+    {
+      "feature": "days_since_last_political_event",
+      "importance": 0.029592582842900693
+    },
+    {
+      "feature": "days_since_last_major_political_event",
+      "importance": 0.02956120657347522
+    },
+    {
+      "feature": "days_since_last_christian_event",
+      "importance": 0.02910557668308485
+    },
+    {
+      "feature": "days_since_last_hindu_event",
+      "importance": 0.028520976676347454
+    },
+    {
+      "feature": "days_since_last_sikh_event",
+      "importance": 0.026619058438074165
+    },
+    {
+      "feature": "days_since_last_islamic_event",
+      "importance": 0.025954869849150033
+    },
+    {
+      "feature": "days_to_next_islamic_event",
+      "importance": 0.025926104340682588
+    }
+  ]
+}

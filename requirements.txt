@@ -1,0 +1,30 @@
+# core
+pandas
+numpy
+openpyxl
+psycopg2-binary
+
+# EDA + viz
+matplotlib
+seaborn
+plotly
+
+# geo + maps
+folium
+geopandas
+shapely
+
+# NLP (W5-6)
+nltk
+spacy
+
+# ML (W7-8)
+scikit-learn
+xgboost
+
+# dashboard (W9-10)
+streamlit
+
+# utilities
+python-dateutil
+pyyaml

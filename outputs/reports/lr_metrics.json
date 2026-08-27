@@ -1,0 +1,249 @@
+{
+  "model": "LogisticRegression",
+  "trained_at": "2026-06-23T09:14:47.375945",
+  "features_count": 129,
+  "train": {
+    "n": 3576,
+    "n_positive": 283,
+    "n_negative": 3293,
+    "positive_rate": 0.0791,
+    "roc_auc": 0.8657,
+    "pr_auc": 0.3629,
+    "threshold": 0.5,
+    "precision": 0.2093,
+    "recall": 0.8728,
+    "f1": 0.3377,
+    "tn": 2360,
+    "fp": 933,
+    "fn": 36,
+    "tp": 247,
+    "precision_at_10": 0.9,
+    "recall_at_10": 0.0318,
+    "hits_at_10": 9,
+    "precision_at_20": 0.8,
+    "recall_at_20": 0.0565,
+    "hits_at_20": 16,
+    "precision_at_50": 0.58,
+    "recall_at_50": 0.1025,
+    "hits_at_50": 29
+  },
+  "test": {
+    "n": 534,
+    "n_positive": 29,
+    "n_negative": 505,
+    "positive_rate": 0.0543,
+    "roc_auc": 0.841,
+    "pr_auc": 0.2238,
+    "threshold": 0.5,
+    "precision": 0.1038,
+    "recall": 0.931,
+    "f1": 0.1869,
+    "tn": 272,
+    "fp": 233,
+    "fn": 2,
+    "tp": 27,
+    "precision_at_10": 0.3,
+    "recall_at_10": 0.1034,
+    "hits_at_10": 3,
+    "precision_at_20": 0.2,
+    "recall_at_20": 0.1379,
+    "hits_at_20": 4,
+    "precision_at_50": 0.22,
+    "recall_at_50": 0.3793,
+    "hits_at_50": 11
+  },
+  "community_breakdown": [
+    {
+      "minority_community": "ahmadi",
+      "n": 10,
+      "n_pos": 8,
+      "n_neg": 2,
+      "roc_auc": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "precision_at_20": 0.8,
+      "recall_at_20": 1.0
+    },
+    {
+      "minority_community": "christian",
+      "n": 213,
+      "n_pos": 19,
+      "n_neg": 194,
+      "roc_auc": 0.9992,
+      "precision": 1.0,
+      "recall": 0.8947,
+      "precision_at_20": 0.9,
+      "recall_at_20": 0.9474
+    },
+    {
+      "minority_community": "hindu",
+      "n": 11,
+      "n_pos": 2,
+      "n_neg": 9,
+      "roc_auc": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "precision_at_20": 0.1818,
+      "recall_at_20": 1.0
+    },
+    {
+      "minority_community": "multiple",
+      "n": 3,
+      "n_pos": 0,
+      "n_neg": 3,
+      "roc_auc": NaN,
+      "precision": 0.0,
+      "recall": 0.0,
+      "precision_at_20": 0.0,
+      "recall_at_20": 0.0
+    },
+    {
+      "minority_community": "sikh",
+      "n": 5,
+      "n_pos": 0,
+      "n_neg": 5,
+      "roc_auc": NaN,
+      "precision": 0.0,
+      "recall": 0.0,
+      "precision_at_20": 0.0,
+      "recall_at_20": 0.0
+    },
+    {
+      "minority_community": "unspecified",
+      "n": 292,
+      "n_pos": 0,
+      "n_neg": 292,
+      "roc_auc": NaN,
+      "precision": 0.0,
+      "recall": 0.0,
+      "precision_at_20": 0.0,
+      "recall_at_20": 0.0
+    }
+  ],
+  "lahore_breakdown": [
+    {
+      "is_lahore": false,
+      "n": 415,
+      "n_pos": 18,
+      "n_neg": 397,
+      "roc_auc": 0.8452,
+      "precision": 0.0841,
+      "recall": 1.0,
+      "precision_at_20": 0.15,
+      "recall_at_20": 0.1667
+    },
+    {
+      "is_lahore": true,
+      "n": 119,
+      "n_pos": 11,
+      "n_neg": 108,
+      "roc_auc": 0.8468,
+      "precision": 0.1957,
+      "recall": 0.8182,
+      "precision_at_20": 0.25,
+      "recall_at_20": 0.4545
+    }
+  ],
+  "top_features": [
+    {
+      "feature": "level3_case_nature=Any Other Religious Issue",
+      "coef": 1.913186508788895,
+      "abs_coef": 1.913186508788895
+    },
+    {
+      "feature": "days_since_last_sikh_event",
+      "coef": -0.906038140279366,
+      "abs_coef": 0.906038140279366
+    },
+    {
+      "feature": "level3_case_nature=Other Disputes & Public Nuisances",
+      "coef": -0.836899986202353,
+      "abs_coef": 0.836899986202353
+    },
+    {
+      "feature": "prior_30d_district_count",
+      "coef": 0.7992915328868806,
+      "abs_coef": 0.7992915328868806
+    },
+    {
+      "feature": "level3_case_nature=Other Assault",
+      "coef": -0.755320247931327,
+      "abs_coef": 0.755320247931327
+    },
+    {
+      "feature": "days_to_next_sikh_event",
+      "coef": -0.6514815641761942,
+      "abs_coef": 0.6514815641761942
+    },
+    {
+      "feature": "level3_case_nature=Loudspeaker/ Loud Music",
+      "coef": -0.645787376157736,
+      "abs_coef": 0.645787376157736
+    },
+    {
+      "feature": "level3_case_nature=Street Fight",
+      "coef": -0.640372156733094,
+      "abs_coef": 0.640372156733094
+    },
+    {
+      "feature": "level3_case_nature=Drunk Behaviour/Fighting",
+      "coef": -0.6009098563677516,
+      "abs_coef": 0.6009098563677516
+    },
+    {
+      "feature": "level3_case_nature=Any Security related matter",
+      "coef": -0.5821944915036239,
+      "abs_coef": 0.5821944915036239
+    },
+    {
+      "feature": "level3_case_nature=Domestic Violence",
+      "coef": -0.5781284132671176,
+      "abs_coef": 0.5781284132671176
+    },
+    {
+      "feature": "level3_case_nature=Other Help",
+      "coef": -0.5742621039142143,
+      "abs_coef": 0.5742621039142143
+    },
+    {
+      "feature": "misinfo_event_in_window_same_community",
+      "coef": 0.5717514121668027,
+      "abs_coef": 0.5717514121668027
+    },
+    {
+      "feature": "level3_case_nature=Attack/Damage of Religious Places (Church/Mosque/Gurdwara/Mundar/Imambargah/Mazzar)",
+      "coef": 0.4783360499997002,
+      "abs_coef": 0.4783360499997002
+    },
+    {
+      "feature": "level3_case_nature=Attempt to Illegal Possession of Land/ Premises",
+      "coef": -0.46418422130232573,
+      "abs_coef": 0.46418422130232573
+    },
+    {
+      "feature": "level3_case_nature=Physical Threats / Harrasment",
+      "coef": -0.4476428438740715,
+      "abs_coef": 0.4476428438740715
+    },
+    {
+      "feature": "prior_30d_ps_minority_targeted",
+      "coef": 0.4243731138835834,
+      "abs_coef": 0.4243731138835834
+    },
+    {
+      "feature": "level3_case_nature=Defiling of Holy Book",
+      "coef": 0.4241542347611517,
+      "abs_coef": 0.4241542347611517
+    },
+    {
+      "feature": "days_to_next_islamic_event",
+      "coef": 0.42044173866518114,
+      "abs_coef": 0.42044173866518114
+    },
+    {
+      "feature": "level3_case_nature=Aerial Firing",
+      "coef": -0.40410466247839805,
+      "abs_coef": 0.40410466247839805
+    }
+  ]
+}

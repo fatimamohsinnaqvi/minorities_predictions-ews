@@ -1,0 +1,3 @@
+# Only one runtime dependency — the app loads `dashboard.html` and
+# Streamlit handles the login + embedding.
+streamlit>=1.30

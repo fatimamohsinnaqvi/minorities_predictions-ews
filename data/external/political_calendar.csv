@@ -1,0 +1,20 @@
+date,event_type,description,severity
+2024-02-08,national_election,Pakistan General Election 2024,major
+2024-02-29,assembly,Punjab Assembly inaugural session (PML-N),major
+2024-04-21,by_election,Punjab Assembly by-election multiple constituencies,observance
+2024-08-15,protest,Nationwide PTI protest call,observance
+2024-09-08,by_election,PP-22 Chakwal by-election,observance
+2024-09-23,legislation,Constitutional 26th Amendment passed,major
+2024-10-05,protest,PTI Islamabad lockdown call,major
+2024-11-24,protest,PTI Islamabad protest (D-Chowk),major
+2024-12-09,trial,Imran Khan multiple high-profile case hearings,observance
+2025-02-08,anniversary,One year of 2024 General Election; political tension,observance
+2025-05-09,anniversary,May-9 (2023) anniversary; PTI worker arrests reported,major
+2025-08-14,independence,Independence Day Pakistan,observance
+2025-09-11,assembly,Constitutional Court bench debate (Punjab),observance
+2025-10-15,by_election,Punjab Assembly by-election - NA seats vacated,observance
+2025-12-01,judicial,Major Supreme Court ruling on political case,observance
+2026-02-08,anniversary,Two-year election anniversary,observance
+2026-05-09,anniversary,May-9 anniversary,major
+2026-06-15,protest,Reported nationwide protest call (placeholder),observance
+2026-08-14,independence,Independence Day Pakistan,observance

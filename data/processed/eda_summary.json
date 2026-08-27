@@ -1,0 +1,52 @@
+{
+  "total_rows": 4110,
+  "rows_lahore": 928,
+  "rows_minority_targeted_strict": 312,
+  "rows_with_coords": 3281,
+  "top_districts": {
+    "Lahore": 928,
+    "Faisalabad": 381,
+    "Sheikhupura": 282,
+    "Sialkot": 258,
+    "Gujranwala": 233
+  },
+  "top_level3": {
+    "Any Other Religious Issue": 1977,
+    "Defiling of Holy Book": 297,
+    "Derogation of Holy Persons": 198,
+    "Other Disputes & Public Nuisances": 167,
+    "Distribution/ Display of hateful sectarian material": 145,
+    "Other Assault": 142,
+    "Hate Speech": 108,
+    "Other Help": 93
+  },
+  "by_community": {
+    "unspecified": 2530,
+    "christian": 1305,
+    "ahmadi": 166,
+    "hindu": 58,
+    "sikh": 47,
+    "multiple": 4
+  },
+  "lahore_top_ps": {
+    "Nisthar Colony": 82,
+    "Chung": 41,
+    "Factory Area": 40,
+    "Raiwind City": 31,
+    "Kahna": 25
+  },
+  "lahore_by_dow": {
+    "Monday": 0,
+    "Tuesday": 0,
+    "Wednesday": 0,
+    "Thursday": 0,
+    "Friday": 0,
+    "Saturday": 0,
+    "Sunday": 0
+  },
+  "by_match_source": {
+    "religious_offence": 2463,
+    "desc_keyword": 1312,
+    "both": 335
+  }
+}

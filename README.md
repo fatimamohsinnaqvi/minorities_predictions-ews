@@ -1,5 +1,4 @@
-# Minority Early Warning System: Code and Analysis
-
+`Minority Early Warning System: Code and Analysis`
 A predictive early warning system for minority targeted crime in Punjab, Pakistan, with a focus on Lahore. Built using PSCA Emergency 15 case data, this project combines data processing, spatiotemporal analysis, predictive modelling, and interactive visualisation to investigate patterns in reported incidents and assess their potential use in early warning analysis.
 
 This repository contains the analysis pipeline, trained model artefacts where available, aggregated datasets, evaluation results, figures, and methodological documentation. It is designed to support independent review, reproduction of the documented analyses, and local execution of the dashboard.

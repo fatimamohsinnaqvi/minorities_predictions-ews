@@ -1,101 +1,120 @@
-# Minorities Early-Warning System — Code & Analysis
+# Minority Early Warning System: Code and Analysis
 
-Predictive early-warning system for minority-targeted crime in Punjab
-(focused on Lahore), built on PSCA Emergency-15 case data. This repository
-contains the **code, trained models, aggregated data, figures, and full
-methodology** — enough to review the work, reproduce the headline analysis,
-and run the dashboard locally.
+A predictive early warning system for minority targeted crime in Punjab, Pakistan, with a focus on Lahore. Built using PSCA Emergency 15 case data, this project combines data processing, spatiotemporal analysis, predictive modelling, and interactive visualisation to investigate patterns in reported incidents and assess their potential use in early warning analysis.
 
-> **Private repository.** Share only with collaborators. See the privacy
-> note below before redistributing anything.
+This repository contains the analysis pipeline, trained model artefacts where available, aggregated datasets, evaluation results, figures, and methodological documentation. It is designed to support independent review, reproduction of the documented analyses, and local execution of the dashboard.
 
----
+## Quick Start
 
-## Quick start
+### A. Run the Dashboard Locally
 
-### A) Run the dashboard locally (no data files needed)
-
-The dashboard is self-contained — the map, forecasts, and all data are
-baked into `dashboard/dashboard.html` (with caller details redacted).
+The dashboard is designed to run locally using the included sanitised application and its bundled visualisation data.
 
 ```bash
 cd dashboard
 python3 -m venv venv
-source venv/bin/activate            # Windows: .\venv\Scripts\Activate.ps1
-pip install -r requirements.txt     # just streamlit
 
-# set a login password
-cp .streamlit/secrets.toml.example .streamlit/secrets.toml
-# edit .streamlit/secrets.toml → username = "admin", password = "..."
+# macOS/Linux
+source venv/bin/activate
 
-streamlit run app.py                # opens http://localhost:8501
+# Windows PowerShell
+# .\venv\Scripts\Activate.ps1
+
+pip install -r requirements.txt
 ```
 
-(The same dashboard is also deployed live — ask the maintainer for the URL.)
+Configure authentication using the example secrets file:
 
-### B) Reproduce the headline analysis
+```bash
+cp .streamlit/secrets.toml.example .streamlit/secrets.toml
+```
+
+Edit `.streamlit/secrets.toml` to configure the username and password, then launch the application:
+
+```bash
+streamlit run app.py
+```
+
+The dashboard will be available locally at `http://localhost:8501`.
+
+Keep your actual secrets file private and never commit credentials to GitHub.
+
+A live deployment may also be available from the project maintainer.
+
+### B. Reproduce the Temporal Validation Analysis
+
+Run the analysis pipeline:
 
 ```bash
 bash run.sh
 ```
 
-This creates a virtual environment, installs the analysis dependencies,
-and runs the honest temporal validation
-([`src/models/psweek_temporal_eval.py`](src/models/psweek_temporal_eval.py)),
-regenerating `outputs/reports/psweek_temporal_eval.json` and the
-`psweek_rolling_origin.png` / `psweek_calibration.png` figures.
+The script creates a virtual environment, installs the required analysis dependencies, and executes the temporal validation pipeline in `src/models/psweek_temporal_eval.py`.
 
----
+The analysis regenerates the temporal evaluation report at `outputs/reports/psweek_temporal_eval.json`, together with the rolling origin evaluation and calibration figures.
 
-## What's in here
+See `docs/08_temporal_validation.md` for the evaluation methodology, results, and interpretation.
 
-```
+Reproduction depends on the availability of the required aggregated data and software dependencies.
+
+## Repository Structure
+
+```text
 minorities_code/
-├── src/                 # all pipeline + feature + model code
-├── dashboard/           # runnable, self-contained Streamlit dashboard (sanitised)
+├── src/                 # Data processing, features, and models
+├── dashboard/           # Local Streamlit dashboard
 ├── data/
-│   ├── csv_snapshot/    # aggregated PS-week tables (no per-case, no PII)
-│   ├── processed/       # district severity, Prophet forecasts, EDA summary
-│   └── external/        # public event calendars (religious/political/misinfo)
+│   ├── csv_snapshot/    # Aggregated police station by week tables
+│   ├── processed/       # District severity, forecasts, and EDA summaries
+│   └── external/        # Public event calendars
 ├── outputs/
-│   ├── models/          # trained .pkl models
-│   ├── reports/         # metrics JSON + model cards
-│   └── figures/         # EDA (7) + model (15) figures — paper-ready PNGs
-├── docs/                # full methodology (00–08 + ethics, audit)
-├── PAPER_GUIDE.md       # map of paper sections → evidence/figures/numbers
-├── run.sh               # one-command reproduce
-└── requirements.txt
+│   ├── models/          # Available trained model artefacts
+│   ├── reports/         # Evaluation metrics and model cards
+│   └── figures/         # Exploratory analysis and model evaluation figures
+├── docs/                # Methodology, validation, ethics, and audit documentation
+├── PAPER_GUIDE.md       # Research sections, evidence, and figures
+├── run.sh               # Analysis reproduction script
+└── requirements.txt     # Analysis dependencies
 ```
 
-## Data & privacy — read before redistributing
+## Data and Privacy
 
-This project handles reports about religious minorities, so raw data is
-**deliberately excluded**:
+This project concerns reported incidents involving religious minorities and therefore requires careful handling of sensitive operational data.
 
-- **Not included:** per-case incident records, caller descriptions, phone
-  numbers, and the unredacted map exports. These contain personal data.
-- **Included:** only aggregated tables (police-station × week counts,
-  district severity, monthly forecasts) and public event calendars — none
-  of which contain per-person or contact information.
+Raw case level records are intentionally excluded from this repository.
 
-The scripts under `src/` that read the raw operational database
-(`db_config`, not included) will not run offline; the aggregated tables
-provided are enough to reproduce the forecasting analysis in `run.sh`.
+The repository does not include individual incident records, caller descriptions, telephone numbers, or unredacted map exports containing potentially identifying information. It includes aggregated police station by week tables, district level severity summaries, monthly forecasts, and public event calendar data.
 
-For the honest, validated performance numbers (rolling-origin, calibration),
-see [`docs/08_temporal_validation.md`](docs/08_temporal_validation.md) —
-cite those, not the single-cutoff headline figures.
+The operational database configuration, `db_config`, is not included. Scripts that depend on direct access to the raw operational database therefore require separately authorised access to that source. The included aggregated datasets support the documented forecasting analysis where the required inputs are available.
 
-## Where to start reading
+Aggregated data and derived outputs can still carry privacy risks, particularly when geographic or temporal categories are narrow. Their suitability for public release should be assessed before redistribution.
 
-1. [`PAPER_GUIDE.md`](PAPER_GUIDE.md) — if you're writing the paper.
-2. [`docs/04_modeling_methodology.md`](docs/04_modeling_methodology.md) — how the models work.
-3. [`docs/08_temporal_validation.md`](docs/08_temporal_validation.md) — the rigorous validation.
-4. [`docs/ethics_and_limitations.md`](docs/ethics_and_limitations.md) — the ethical framing.
+## Model Evaluation and Limitations
 
----
+Model performance should be assessed using temporal validation results rather than relying solely on a single train test split or cutoff.
 
-*Note: the large Random Forest `.pkl` files are omitted to keep the repo
-lean (RF is not the deployed forecaster — LR is). Regenerate them with
-`python src/models/train_rf.py` and `python src/models/train_psweek.py`
-if needed (requires the operational database).*
+The rolling origin evaluation and calibration analysis are documented in `docs/08_temporal_validation.md`. These results should be used when describing model performance, alongside appropriate baseline comparisons, uncertainty, and limitations in the available data.
+
+Predictions based on reported incident data should not be interpreted as definitive measures of the underlying prevalence of crime. Reporting patterns, data coverage, and other sources of bias may affect the results. The system is intended to support further analysis and inform the allocation of protective resources, not to establish individual culpability or justify discriminatory treatment of communities.
+
+## Where to Start
+
+1. `PAPER_GUIDE.md` provides an overview of the research, figures, and supporting evidence.
+2. `docs/04_modeling_methodology.md` explains the model design and methodology.
+3. `docs/08_temporal_validation.md` documents temporal evaluation, calibration, and performance assessment.
+4. `docs/ethics_and_limitations.md` discusses ethical considerations, limitations, and responsible interpretation.
+
+## Model Artefacts
+
+Large Random Forest (`.pkl`) model files are omitted to keep the repository lightweight. Random Forest is not the deployed forecasting model; the current implementation uses Logistic Regression for forecasting.
+
+The Random Forest and PS week models can be retrained using the following scripts:
+
+```bash
+python src/models/train_rf.py
+python src/models/train_psweek.py
+```
+
+These scripts require access to the operational database and may not run in an offline environment.
+
+This repository documents a data driven research project. Its findings and predictive outputs should be interpreted in light of the validation results, data limitations, and ethical considerations described in the accompanying documentation.
